@@ -1,0 +1,71 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title FarmerOne Registration
+  link(rel='stylesheet', href='css/farmerOnregistration.css')
+.form-container
+  form#patientAdmission(name='patientAdmission', onsubmit='return false')
+    h1 FarmerOne Registration
+    hr
+    br
+    h4 Personal Details
+    br
+    fieldset.fieldset
+      legend Patient Registration
+      .fields
+        label First Name:
+        input.input-field(autocomplete='off', type='text', name='firstname', placeholder='Enter first name', onblur='checkFirstName()')
+      .fields
+        label Second Name:
+        input.input-field(autocomplete='off', type='text', name='lastname', placeholder='Enter second name', onblur='checkLastName()')
+      .fields
+        label Mobile Number
+        input.input-field(autocomplete='off', type='numbers', placeholder='+256771234567', name='telephone', onblur='checkTelephone()')
+      .fields
+        label Gender
+        input.input-field(autocomplete='off', type='text', placeholder='Enter your gender', name='gender', onblur='checkGender()')
+      .fields
+        label Email
+        input.input-field(type='text', placeholder='Enter Email', name='email', onblur='checkEmail()')
+      .fields
+        label Date:
+        input.input-field(autocomplete='off', type='text', placeholder='dd/mm/yyyy', name='regDate', onblur='checkDate()')
+    br
+    // the second field
+    strong
+      fieldset.fieldset
+        legend Identity Detail
+        .fields
+          label Farmer One Number
+          input.input-field(type='text', placeholder='Enter Id number', required='')
+        .fields
+          label Occupation
+          input.input-field(type='text', placeholder='Enter activities', required='')
+        .fields
+          label Ward
+          input.input-field(type='text', placeholder='Enter ward', required='')
+        .fields
+          label Period of stay in Ward
+          input.input-field(type='text', placeholder='Enter period of stay', required='')
+        .fields
+          label Residence type
+          input.input-field(type='text', placeholder='Enter type of Residence ', required='')
+        .fields
+          label Directions to Home
+          input.input-field(type='text', placeholder='Enter direction', required='')
+    br
+    // the third field
+    strong
+      fieldset.fieldset
+        legend Address Details
+        .fields
+          label Nationality
+          input.input-field(type='text', placeholder='Enter first name', required='')
+        .fields
+          label District
+          input.input-field(type='text', placeholder='Enter second name', required='')
+    .row
+      input.button(name='submit', type='submit', value='Submit Form', onclick='')
+script(src='./farmerOnregistration.js')

@@ -1,0 +1,90 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  // ===== CSS =====
+  link(rel='stylesheet', href='css/homepage.css')
+  title Ufarm
+#navbar.l-navbar
+  nav.nav
+    div
+      .nav__brand
+        ion-icon#nav-toggle.nav__toggle(name='menu-outline')
+        a.nav__logo(href='#') U-FARM
+      .nav__list
+        a.nav__link.active(href='#home')
+          ion-icon.nav__icon(name='home-outline')
+          span.nav__name Dashboard
+        //
+          <a href="#" class="nav__link">
+          <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
+          <span class="nav__name">FarmerOne</span>
+          </a>
+        .nav__link.collapse
+          ion-icon.nav__icon(name='folder-outline')
+          span.nav__name FarmerOne
+          ion-icon.collapse__link(name='chevron-down-outline')
+          ul.collapse__menu
+            a.collapse__sublink(href='#registration') Register
+            a.collapse__sublink(href='#') Register UF
+            a.collapse__sublink(href='#') Approve products
+        //
+          <a href="#" class="nav__link">
+          <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon>
+          <span class="nav__name">Analytics</span>
+          </a>
+        .nav__link.collapse
+          ion-icon.nav__icon(name='people-outline')
+          span.nav__name Urban Farmer
+          ion-icon.collapse__link(name='chevron-down-outline')
+          ul.collapse__menu
+            a.collapse__sublink(href='#') Upload
+            a.collapse__sublink(href='#') Product Type
+            a.collapse__sublink(href='#') Mode of Payment &amp; delivery
+        .nav__link.collapse
+          ion-icon.nav__icon(name='settings-outline')
+          span.nav__name Community
+          ion-icon.collapse__link(name='chevron-down-outline')
+          ul.collapse__menu
+            a.collapse__sublink(href='#') Upload
+            a.collapse__sublink(href='#') Product Type
+            a.collapse__sublink(href='#') Mode of Payment &amp; delivery
+    a.nav__link(href='#')
+      ion-icon.nav__icon(name='log-out-outline')
+      span.nav__name Log Out
+header
+  a.logo(href='#')
+    i.fas.fa-farm
+    | U-FARM
+  .icons
+    i#menu-bars.fas.fa-bars
+    i#search-icon.fas.fa-search
+    a.fas.fa-heart(href='#')
+    a.fas.fa-shopping-cart(href='#')
+// search form
+// CONTENT WRAPPER
+#content-wrapper
+  // HOME
+  section#home.full-height.px-lg-5
+    .container
+      .row
+        .col-lg-10
+          h1.display-4.fw-bold(data-aos='fade-up')
+            | Welcome to 
+            span.text-brand U-FARM
+            |  Uganda
+          p.lead.mt-2.mb-4(data-aos='fade-up', data-aos-delay='300')
+            | We have the best services,
+            | quality products and reliable delivery services
+          div(data-aos='fade-up', data-aos-delay='600')
+            a.btn.btn-brand.me-3(href='#') Learn More
+            a.link-custom(href='#') contact us
+  // //HOME
+// //CONTENT WRAPPER
+// loader part
+.loader-container
+  img(src='images/loader.gif', alt='')
+// ===== IONICONS =====
+script(src='https://unpkg.com/ionicons@5.1.2/dist/ionicons.js')
+// ===== MAIN JS =====
+script(src='JS/main.js')
