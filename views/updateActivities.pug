@@ -1,0 +1,35 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Update FarmerOne
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT', crossorigin='anonymous')
+  link(rel='stylesheet', href='css/AppointFO.css')
+// Update FarmerOne activities section
+section#updateAct.contact.section-padding(action='/updateactivities', name='updateactivities', method='POST')
+  .container
+    table
+      .row
+        .col-md-12
+          .section-header.text-center.pb-5
+            h2 FarmerOne Activities
+        .row.m-0
+          .col-md-12.p-0.pt-4.pb-4
+            form.bg-light(action='#', class='p-4.m-auto')
+              .row
+                .col-md-12
+                  label.form-label(for='exampleInputEmail1') Name
+                  .mb-3
+                    input.form-control(type='text', required='', placeholder='Enter full name of the FarmerOne')
+                .col-md-12
+                  label.form-label(for='exampleInputEmail1') Identification Number
+                  .mb-3
+                    input.form-control(type='text', required='', placeholder='Enter ID')
+                .col-md-12
+                  label.form-label(for='exampleInputEmail1') Other details
+                  .mb-3
+                    textarea.form-control(rows='3', required='', placeholder='')
+                button.btn.btn-warning.btn-lg.btn-block.mt-3 Update
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js', integrity='sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8', crossorigin='anonymous')

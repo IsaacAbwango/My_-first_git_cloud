@@ -1,42 +1,62 @@
 //Dependencies
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose')//Database start
+const config = require('./config/db');
+const passport = require('passport');
+//express session
+const expressSession = require('express-session')({//database when some is not successfully logged in
+    secret: 'secret',
+    resave:false,
+    saveUninitialized: false,
+});
+
+//import the user model-14
+const Registration = require('./models/User');
+
+//Importing route files
+const registrationRoutes = require('./routes/registerRoutes')
+
 //instantiation
 const app = express(); 
+
+//Setup Database Connections
+mongoose.connect(config.database,{ useNewUrlParser: true });//Database
+const db = mongoose.connection;
+
+// Check connection
+db.once('open', function(){
+
+  console.log('Connected to MongoDB');
+});
+// Check for db errors
+db.on('error', function(err){
+  console.error(err);
+});
 
 //Configurations
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname,'views'));
-app.set('views', './views');
-
+//app.set('views', './views');
 //Middleware
-//Simple request time logger
-app.use((req, res, next)=>{
-    console.log("A new request received at"  + Date.now());
-        //This function call tells that more processing is
-        //required for the current request
-
-    next();
-});
-
-app.use('/about', (req, res, next)=>{
-    console.log("A new request received at"  + Date.now());
-        //This function call tells that more processing is
-        //required for the current request
-
-    next();
-});
-
 app .use(express.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname,'public')));//handles static images
 
 app.use('/public/uploads', express.static(__dirname + '/public/uploads'));//uploads by images
 
-//Routes
+app.use(expressSession); //Database connection
 
- //Rendering pug file
- app.get("/login",(req, res) =>{
+//passport configuration middleware(database connection)
+app.use(passport.initialize())//passport is for authentication
+app.use(passport.session());
+passport.use(Registration.createStrategy());//14
+passport.serializeUser(Registration.serializeUser());// the user are assign a serial number when the login 
+passport.deserializeUser(Registration.deserializeUser()); // once they logout the serial no. is destroyed
+
+//Routes
+app.use('/',registrationRoutes)
+app.get("/login",(req, res) =>{
     
     res.render("login"); 
 });
@@ -85,6 +105,7 @@ app.post("/homepage",(req, res) =>{
    console.log(req.body);
     res.redirect("/homepage"); 
 });
+
 //Foe invalid, always the second last
 app.get("*",(req, res) =>{
    
@@ -93,4 +114,4 @@ app.get("*",(req, res) =>{
 
 
 //Bootstrapping Server
-app.listen(3000, () => console.log('we are listening to port 3000'));
+app.listen(4000, () => console.log('we are listening to port 4000'));

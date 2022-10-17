@@ -1,0 +1,70 @@
+*{
+    border-radius: 5px;
+    background-color: aqua;
+}
+
+body{
+    background-color: #ccc;
+   
+}
+
+table, th, td {
+    border: 1px solid;
+    width: 100%;
+  }
+
+    
+  th {
+    height: 70px;
+    text-align: left;
+  }
+
+  td {
+    text-align: center;
+  }
+  
+  
+
+
+
+  /*table*/
+       @media only screen and (max-width: 800px){
+        #no more tables tbody,  #no more tables tr, #no more tables td{
+          display: block;
+        }
+        #no more tables thread tr{
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+        #no more tables td{
+          position: relative;
+          padding-left: 50%;
+          border: none;
+          border-bottom: 1px solid #eee;
+        }
+        #no more tables td:before{
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+        }
+        #no more tables tr{
+          border-bottom: 1px solid #ccc;
+        }
+      }
+      .btn1{
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 20%;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+            font-weight: bold; display: flex;
+        }
+        .btn1:hover{
+            border: 1px solid;
+            color: black;
+            background: white;
+        }
