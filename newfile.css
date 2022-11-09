@@ -1,0 +1,61 @@
+.tv {
+    width: 800px;
+    height: 400px;
+    background: gray;
+    margin: 10% auto;
+    position: relative;
+
+}
+
+.chelseaoff {
+    width: 8%;
+    height: 30px;
+    position: absolute;
+    right: 1%;
+    bottom: 5%;
+    left: 90%;
+    background: blue;
+    color: white;
+}
+
+.displayshow {
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+
+}
+
+.frame {
+    width: 92%;
+    height: 320px;
+    display: block;
+    right: 90%;
+    padding: 10px 20px;
+    top: auto;
+
+}
+
+button {
+    cursor: pointer;
+    outline: auto;
+
+}
+
+.chelseaprev,
+.chelseanext {
+    left: 42%;
+    color: blue;
+    bottom: 6%;
+    position: absolute;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.chelseanext {
+    left: 50%;
+}
+
+h1 {
+    color: blue;
+}
